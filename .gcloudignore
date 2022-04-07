@@ -1,0 +1,9 @@
+# Exclude compiled files
+build
+
+# Exclude dependencies
+node_modules
+
+# Docker files
+.dockerignore
+Dockerfile

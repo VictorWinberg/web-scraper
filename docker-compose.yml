@@ -1,0 +1,44 @@
+version: "3"
+services:
+  app:
+    container_name: app
+    build:
+      context: .
+      dockerfile: .Dockerfile
+      target: install
+    command: npm run dev
+    depends_on:
+      - postgres
+    volumes:
+      - ./src:/app/src
+    environment:
+      DATABASE_URL: postgres://postgres:password@postgres:5432/tretton37
+      NODE_ENV: development
+      PORT: 3000
+    ports:
+      - "3000:3000"
+    networks:
+      - tretton37
+
+  postgres:
+    container_name: postgres
+    image: postgres:10.4
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./postgresdata:/var/lib/postgresql/data
+      - ./src/migrations/dbinit.sql:/docker-entrypoint-initdb.d/dbinit.sql
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: tretton37
+    networks:
+      - tretton37
+
+volumes:
+  db-data:
+
+networks:
+  tretton37:
+    driver: bridge
