@@ -1,3 +1,4 @@
+DROP TABLE IF EXISTS users CASCADE;
 CREATE TABLE users (
   id                SERIAL        NOT NULL,
   name              VARCHAR(50)   NOT NULL,
@@ -5,7 +6,7 @@ CREATE TABLE users (
   country           VARCHAR(50)   NOT NULL,
   imageFullUrl      VARCHAR(255),
   imagePortraitUrl  VARCHAR(255),
-  text              VARCHAR(500),
+  text              TEXT,
 
   created_at TIMESTAMP DEFAULT NOW(),
 

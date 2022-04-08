@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import Pool from "../config/db";
+import Pool from "../../config/db";
 
 class CoworkersController {
   public async get(_req: Request, res: Response) {

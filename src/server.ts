@@ -1,7 +1,7 @@
 import express from "express";
 import bodyParser from "body-parser";
 import Pool from "./config/db";
-import CoworkersRouter from "./routers/CoworkersRouter";
+import CoworkersRouter from "./api/coworkers/coworkers-router";
 
 class Server {
   private app;
