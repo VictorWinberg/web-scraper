@@ -1,5 +1,5 @@
 {
-  "name": "tretton37",
+  "name": "web-scraper",
   "version": "1.0.0",
   "dependencies": {
     "body-parser": "^1.20.0",
@@ -29,13 +29,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/VictorWinberg/tretton37.git"
+    "url": "git+https://github.com/VictorWinberg/web-scraper.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/VictorWinberg/tretton37/issues"
+    "url": "https://github.com/VictorWinberg/web-scraper/issues"
   },
-  "homepage": "https://github.com/VictorWinberg/tretton37#readme",
+  "homepage": "https://github.com/VictorWinberg/web-scraper#readme",
   "description": ""
 }

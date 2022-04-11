@@ -10,13 +10,13 @@ services:
     depends_on:
       - postgres
     environment:
-      DATABASE_URL: postgres://postgres:password@postgres:5432/tretton37
+      DATABASE_URL: postgres://postgres:password@postgres:5432/web-scraper
       NODE_ENV: development
       PORT: 3000
     ports:
       - "3000:3000"
     networks:
-      - tretton37
+      - web-scraper
 
   postgres:
     container_name: postgres
@@ -24,19 +24,19 @@ services:
     ports:
       - "5432:5432"
     volumes:
-      - ./postgresdata:/var/lib/postgresql/data
+      - db-data:/var/lib/postgresql/data
       - ./src/migrations/dbinit.sql:/docker-entrypoint-initdb.d/dbinit.sql
     restart: always
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: password
-      POSTGRES_DB: tretton37
+      POSTGRES_DB: web-scraper
     networks:
-      - tretton37
+      - web-scraper
 
 volumes:
   db-data:
 
 networks:
-  tretton37:
+  web-scraper:
     driver: bridge
