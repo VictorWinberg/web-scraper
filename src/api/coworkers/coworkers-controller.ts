@@ -6,7 +6,7 @@ class CoworkersController {
     try {
       const client = await Pool.connect();
 
-      const sql = "SELECT * FROM users";
+      const sql = "SELECT * FROM users ORDER BY id";
       const { rows } = await client.query(sql);
       const users = rows;
 
